@@ -1,0 +1,56 @@
+<!doctype html>
+<!-- See: https://flask.palletsprojects.com/en/1.1.x/tutorial/templates/ -->
+<head>
+  <title>Price Tracker - {% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <header>
+    <h1>PriceTacker</h1>
+  </header>
+  <nav>
+    <!-- <h2>Website Map</h2>
+    <ul>
+        <li><a class="active" href="/">Home</a></li>
+        <li><a href='/hello/paul'>Hi Paul Test</a></li>
+        <li><a href="/cakes">Cakes</a></li>
+        <li><a href="/nameCol">Name</a></li>
+        <li><a href="/Test">API Test</a></li>
+        <li><a href="/Test2">Basic API Testing 2</a></li>
+        <li><a href="/line2">Basic API Driven line graph (JS)</a></li>
+        <li><a href="/scrimba_index">Scrimba Home</a></li>
+        <li><a href="/scratch">scratch</a></li>
+        <li><a class="right" href="/temperature_log">Temperature Log</a></li>
+    </ul><br> -->
+    <ul class="ul-top-nav">
+      <li class="top-nav"><a href="/">Home</a></li>
+      <li class="top-nav"><a href="/products">Products</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+        <div class="dropdown-content">
+          <a href="/temperature_log">Temperature Log (All)</a>
+          <a href="/temperature_log_hr">Temperature Log (Hourly)</a>
+          <a href="temperature_log_hr_date">Temperature Log (Hourly, date)</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Scratch</a>
+        <div class="dropdown-content">
+          <a href="/scratch">scratch</a>
+          <a href='/hello/paul'>Example</a>
+        </div>
+      </li>
+    </ul>
+  
+  </nav>
+  
+  {% block content %}
+  {% endblock %}
+
+
+<footer>
+  <p>&copy; 2020 Perdy Group ltd. </p>
+  <a href="/">Home</a>
+</footer>
+</body>
